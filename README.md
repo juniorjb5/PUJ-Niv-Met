@@ -2,7 +2,7 @@
 # Maestría en Política Social - 2021
 
 
-## Docente: Orlando Joaqui Barandica
+## Docente: Orlando Joaqui Barandica [www.joaquibarandica.com](https://www.joaquibarandica.com/)
 
 Este es el repositorio del curso Nivelatorio en matemáticas y estadística de la Maestría en Política Social. Aquí podrás encontrar las aplicaciones en R.
 
