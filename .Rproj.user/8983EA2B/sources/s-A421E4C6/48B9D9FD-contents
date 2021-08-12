@@ -1,0 +1,11 @@
+
+
+View(Covid)
+
+library(dplyr)
+
+names(Covid)
+
+Covid %>% 
+  group_by(Departamento) %>% 
+  summarize(prom_edad = mean(Edad))

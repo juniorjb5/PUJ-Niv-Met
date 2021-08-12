@@ -1,0 +1,23 @@
+
+
+
+
+
+git init
+git add .
+git commit -m "Initial commit, creating slides."
+git push origin main 
+
+# EL anterior presenta error. Aun así entre al commit. Ingresé un commit (no creo que haga mucho)
+# Luego le dí en Push
+
+
+# Luego se crea una nueva rama gh-pahes
+# Y se sube el material
+
+git checkout -b gh-pages
+git push origin gh-pages
+
+
+# Hay q subir el material al main
+# Y luego copiarlo al gh-pages (lo hice en la web)
