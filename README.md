@@ -1,6 +1,6 @@
 # Pontificia Universidad Javeriana de Cali
 # Maestría en Política Social
-# Nivelatorio en Matemáticas y Estadística
+
 
 ## Docente: Orlando Joaqui Barandica
 
