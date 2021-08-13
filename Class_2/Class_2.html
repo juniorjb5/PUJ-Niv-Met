@@ -95,14 +95,16 @@ class: left, middle, inverse
 
 
 .pull-left[
-### <i class="fa fa-upload" role="presentation" aria-label="upload icon"></i> [Importing DATA](#Data)
+### <i class="fa fa-sort-numeric-up" role="presentation" aria-label="sort-numeric-up icon"></i> [Estadísticas descriptivas](#Descriptivas)
 
-### <i class="fa fa-broom" role="presentation" aria-label="broom icon"></i> [Cleaning DATA](#Clean)
+### <i class="fa fa-upload" role="presentation" aria-label="upload icon"></i> [Importing DATA](#Data)
 
 ]
 
 
 .pull-right[
+### <i class="fa fa-broom" role="presentation" aria-label="broom icon"></i> [Cleaning DATA](#Clean)
+
 ### <i class="fa fa-dice-d6" role="presentation" aria-label="dice-d6 icon"></i> [Introducción a ggplot2](#ggplot2)
 
 
@@ -111,6 +113,178 @@ class: left, middle, inverse
 
 ---
 
+
+name: Descriptivas
+class: inverse, center, middle
+
+# <i class="fa fa-sort-numeric-up" role="presentation" aria-label="sort-numeric-up icon"></i>
+# Estadísticas descriptivas
+----
+
+.right[
+.bottom[
+####  [<i class="fa fa-bell" role="presentation" aria-label="bell icon"></i>](#menu)
+]
+]
+
+---
+
+# <i class="fa fa-sort-numeric-up" role="presentation" aria-label="sort-numeric-up icon"></i> Indicadores de tendencia central
+
+
+* Indicadores de tendencia central: Muestran hacia donde tienden la mayoría de los datos, un ejemplo es el promedio, que también se conoce como “el centro de gravedad de los datos”.
+
+* Los indicadores son: Promedio, Mediana y Moda.
+
+* Las funciones respectivas en R son: `mean()`, `median()`. R no dispone de
+una función en su paquete base (stats). Por lo cuál se utiliza el paquete
+`modeest`
+
+
+``` r
+
+install.packages("modeest")
+
+library(modeest)
+mlv(runif(20), method = "mfv")[1] ## Genera el valor más frecuente
+
+```
+
+---
+
+# <i class="fa fa-sort-numeric-up" role="presentation" aria-label="sort-numeric-up icon"></i> Indicadores de tendencia central
+
+
+Para el siguiente vector, calcule la media, mediana y moda
+
+``` r
+x &lt;- c(20,NA,10,15,NA,25,22,NA)
+
+mean(x,na.rm=T)
+median(x,na.rm=T)
+mlv(x, method = "mfv",na.rm=T)[1]
+
+``` 
+
+En el caso de variable cuantitativas continuas la moda corresponde a los
+valores alrededor de los cuales se produce la mayor concentración de los datos
+
+
+---
+
+# <i class="fa fa-sort-numeric-up" role="presentation" aria-label="sort-numeric-up icon"></i> Indicadores de dispersión
+
+
+Suponga que se tienen tres grupos de personas con las siguientes estaturas:
+
+``` r
+Grupo1 &lt;- c(60, 100, 140, 180)
+Grupo2 &lt;- c(100, 100, 140, 140)
+Grupo3 &lt;- c(120, 120, 120, 120)
+``` 
+
+
+
+``` r
+mean(Grupo1); mean(Grupo2); mean(Grupo3)
+var(Grupo1); var(Grupo2); var(Grupo3)
+sd(Grupo1); sd(Grupo2); sd(Grupo3)
+```
+
+Analice que dichos grupos tienen igual promedio pero su variabilidad es
+distinta.
+
+
+---
+
+# <i class="fa fa-sort-numeric-up" role="presentation" aria-label="sort-numeric-up icon"></i> Coeficiente de variación
+
+Coeficiente de Variación: Ayuda a identificar si los datos son homogéneos o
+heterogéneos. Determinar si cierta media es consistente con cierta varianza.
+Su cálculo es:
+
+$$ CV(x) = \frac{ \sigma }{\bar{x}} * 100 $$
+
+&lt;br&gt;
+
+**Ejercicio:**
+
+Genere una función que permita calcular el coeficiente de variación a los grupos anteriormente establecidos.
+
+
+``` r
+cv&lt;-function(Y){
+  
+  (sd(Y)/mean(Y))*100
+  
+}
+
+x&lt;-runif(20)
+
+cv(x)
+
+```
+
+
+
+---
+
+
+# <i class="fa fa-sort-numeric-up" role="presentation" aria-label="sort-numeric-up icon"></i> Indicadores de posición
+
+
+* Los indicadores de posición que más se trabaja en el análisis descriptivo
+son los cuartiles, estos dividen la muestra ordenada en cuatro partes
+que contienen aproximadamente el mismo número de datos
+
+* La función en R sería `quantile()`
+
+* También se pueden calcular los percentiles. Por ejemplo: P80 A partir
+de que valor se encuentra el 80% de los datos.
+
+
+
+``` r
+
+x&lt;- rnorm(10000000)
+
+quantile(x,0.95)
+
+```
+
+---
+
+# <i class="fa fa-sort-numeric-up" role="presentation" aria-label="sort-numeric-up icon"></i> Datos agrupados
+
+
+Sea la variable Ingreso en millones, conforme una tabla de frecuencias. Explore
+la función `table.freq()` de la librería `agricolae`.
+
+
+``` r
+
+library(agricolae)
+
+Ingreso &lt;- c(2, 1.5, 3, 2.2, 1, 1.2, 3, 4, 5, 1, 2)
+tbFreq &lt;- table.freq(hist(Ingreso, plot=FALSE))
+tbFreq
+
+```
+
+
+# Actividad
+
+Para la variable **edad** de los datos de `CovidMuestra`. Genere las estadísticas descriptivas y la tabla de frecuencias. *(Una vez identifique como cargar la base de datos)*
+
+
+
+
+
+
+
+
+
+---
 name: Data
 class: inverse, center, middle
 
