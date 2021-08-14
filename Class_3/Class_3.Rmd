@@ -163,7 +163,7 @@ name: Punto1
 
 ```{r echo=FALSE, out.width = "850px", out.height="400px",fig.align='center'}
 
-knitr::include_graphics("img/imagen1.jpg")
+knitr::include_graphics("img/imagen1.JPG")
 
 ```
 
@@ -215,7 +215,7 @@ name: Punto2
 
 ```{r echo=FALSE, out.width = "850px", out.height="400px",fig.align='center'}
 
-knitr::include_graphics("img/imagen2.jpg")
+knitr::include_graphics("img/imagen2.JPG")
 
 ```
 
@@ -262,7 +262,7 @@ name: Punto3
 
 ```{r echo=FALSE, out.width = "700px", out.height="300px",fig.align='center'}
 
-knitr::include_graphics("img/imagen3.jpg")
+knitr::include_graphics("img/imagen3.JPG")
 
 ```
 
@@ -374,7 +374,7 @@ El censo de EE. UU. Recopila datos sobre la raza y el origen étnico de los esta
 
 ```{r echo=FALSE, out.width = "550px", out.height="500px",fig.align='center'}
 
-knitr::include_graphics("img/imagen4.jpg")
+knitr::include_graphics("img/imagen4.JPG")
 
 ```
 
