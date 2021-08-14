@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Nivelatorio en Estadística y Matemáticas</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="PhD. St. Orlando Joaqui-Barandica" />
+    <meta name="date" content="2021-01-01" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="sydney.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+class: inverse, left, bottom
+background-image: url("img/back1.jpg")
+background-size: cover
+
+
+# **Nivelatorio en Estadística y Matemáticas**
+----
+
+## **&lt;br/&gt; Aplicaciones estadísticas en R: Introducción**
+
+### PhD. St. Orlando Joaqui-Barandica
+### 2021
+
+
+
+
+
+---
+name: hola
+class: inverse, middle, center
+
+&lt;img style="border-radius: 50%;" src="img/jave.jpg"
+width="150px"
+/&gt;
+
+# Pontificia Universidad Javeriana de Cali
+
+--
+
+## Maestría en Política Social
+---
+
+
+
+
+.pull-left[
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;img src="img/gif1.gif" width="110%" /&gt;
+]
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+
+.pull-right[
+# Orlando Joaqui-Barandica
+### [www.joaquibarandica.com](https://www.joaquibarandica.com)
+ *PhD. Student in Industrial Engineering* 
+ 
+ *MSc. Applied Economics*
+ 
+ *BSc. Statistics*
+]
+
+
+
+
+---
+
+name: Actividad
+class: inverse, center, middle
+
+# <i class="fa fa-sort-numeric-up" role="presentation" aria-label="sort-numeric-up icon"></i>
+# Actividad
+----
+
+.right[
+.bottom[
+####  [<i class="fa fa-bell" role="presentation" aria-label="bell icon"></i>](#menu)
+]
+]
+
+
+En grupo desarrollar los siguientes puntos y posteriormente discutirlos en clase. Cada grupo presentará su razonamiento para desarrollar los puntos propuestos.
+
+
+
+---
+
+name: menu
+background-image: url("img/back2.jpg")
+background-size: cover
+class: left, middle, inverse
+
+# Contenido
+
+----
+
+
+.pull-left[
+### <i class="fa fa-dice-d6" role="presentation" aria-label="dice-d6 icon"></i> [Punto 1](#Punto1)
+
+### <i class="fa fa-dice-d6" role="presentation" aria-label="dice-d6 icon"></i> [Punto 2](#Punto2)
+
+### <i class="fa fa-dice-d6" role="presentation" aria-label="dice-d6 icon"></i> [Punto 3](#Punto3)
+]
+
+
+.pull-right[
+### <i class="fa fa-dice-d6" role="presentation" aria-label="dice-d6 icon"></i> [Punto 4](#Punto4)
+
+### <i class="fa fa-dice-d6" role="presentation" aria-label="dice-d6 icon"></i> [Punto 5](#Punto5)
+
+### <i class="fa fa-dice-d6" role="presentation" aria-label="dice-d6 icon"></i> [Punto 6](#Punto6)
+
+
+]
+
+---
+
+name: Punto1
+
+# Punto 1
+
+
+**Uso de antibióticos en niños.** El gráfico de barras y el gráfico circular a continuación muestran la distribución de las condiciones médicas preexistentes de los niños que participaron en un estudio sobre la duración óptima del uso de antibióticos en el tratamiento de la traqueítis, que es una infección de las vías respiratorias superiores.
+
+&lt;img src="img/imagen1.jpg" width="850px" height="400px" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: inverse
+background-color: #A93226
+
+
+# Punto 1
+
+
+.left-column[
+
+
+![](https://media.giphy.com/media/LScqP82pdBAlD7xs6m/giphy.gif)
+
+]
+
+
+.right-column[
+
+### **a).** ¿Qué características son evidentes en el gráfico de barras pero no en el gráfico circular?
+
+&lt;br&gt;
+
+
+### **b).** ¿Qué características son evidentes en el gráfico circular pero no en el gráfico de barras?
+
+&lt;br&gt;
+
+
+### **c).** ¿Qué gráfico preferiría utilizar para mostrar estos datos categóricos?
+
+
+]
+
+
+
+
+---
+
+name: Punto2
+
+# Punto 2
+
+
+**Todas las vidas son importantes.** Una encuesta de Washington Post-Schar School realizada en los Estados Unidos en junio de 2020, entre una muestra nacional aleatoria de 1.006 adultos, preguntó a los encuestados si apoyaban u oponían las protestas tras el asesinato de George Floyd que han tenido lugar en ciudades de los EE. UU. La encuesta también recopiló información sobre la edad de los encuestados. ( Washington Post 2020 ) Los resultados se resumen en el gráfico de barras apiladas a continuación.
+
+&lt;img src="img/imagen2.jpg" width="850px" height="400px" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: inverse
+background-color: #A93226
+
+
+# Punto 2
+
+
+.left-column[
+
+
+![](https://media.giphy.com/media/F791uUv9B2G24jF1ff/giphy.gif)
+
+]
+
+
+.right-column[
+
+### **a).** Según el gráfico de barras apiladas, ¿las opiniones sobre las protestas y la edad parecen estar asociadas? Explica tu razonamiento.
+
+&lt;br&gt;
+
+
+### **b).** Conjetura otras posibles variables que podrían explicar la posible asociación entre estas dos variables.
+
+
+]
+
+
+
+---
+
+name: Punto3
+
+
+# Punto 3
+
+
+**Visualización de datos de trasplante de corazón.** El Estudio de trasplante de corazón de la Universidad de Stanford se realizó para determinar si un programa experimental de trasplante de corazón aumentaba la vida útil. Cada paciente que ingresó al programa fue designado oficialmente candidato a trasplante de corazón, lo que significa que estaba gravemente enfermo y podría beneficiarse de un nuevo corazón. Los pacientes fueron asignados aleatoriamente a grupos de tratamiento y de control. Los pacientes del grupo de tratamiento recibieron un trasplante y los del grupo de control no. La siguiente visualización muestra dos versiones diferentes de los datos.
+
+&lt;img src="img/imagen3.jpg" width="700px" height="300px" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: inverse
+background-color: #A93226
+
+
+# Punto 3
+
+
+.left-column[
+
+
+![](https://media.giphy.com/media/SqfHFPbzxw98xwFOiE/giphy.gif)
+
+]
+
+
+.right-column[
+
+### **a).** ¿Cuál es el objetivo del gráfico de la izquierda?
+
+&lt;br&gt;
+
+
+### **b).** ¿Cuál es el objetivo del gráfico de la derecha?
+
+
+&lt;br&gt;
+
+
+### **c).** Para el estudio de trasplante de corazón, ¿cuál de esos aspectos sería más importante mostrar? Es decir, ¿qué diagrama de barras sería mejor como visualización de datos?
+
+
+]
+
+
+
+---
+
+
+name: Punto4
+
+
+# Punto 4
+
+
+**Mortalidad infantil.** La tasa de mortalidad infantil se define como el número de muertes infantiles por cada 1.000 nacidos vivos. Esta tasa se utiliza a menudo como indicador del nivel de salud en un país. El histograma de frecuencia relativa que se muestra a continuación muestra la distribución de las tasas de mortalidad infantil estimadas para 224 países para los que se disponía de esos datos en 2014.
+
+.pull-left[
+
+
+```r
+library(openintro)
+
+data(cia_factbook)
+
+cia_factbook %&gt;% 
+ggplot(aes(x=infant_mortality_rate))+
+  geom_histogram()
+```
+
+
+&gt; Sino tiene la librería `openintro` debe de instalarla.
+
+* Estime Q1, la mediana y Q3 del histograma.
+
+* ¿Esperaría que la media de este conjunto de datos fuera menor o mayor que la mediana? Explica tu razonamiento.
+
+]
+
+.pull-right[
+
+![](Class_3_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+
+
+]
+
+
+
+---
+
+name: Punto5
+
+# Punto 5
+
+
+.left-column[
+
+El censo de EE. UU. Recopila datos sobre la raza y el origen étnico de los estadounidenses, entre muchas otras variables. El siguiente histograma muestra la distribución del porcentaje de la población hispana en 3,142 condados de EE. UU. En 2010. También se muestra un histograma de registros de estos valores.
+
+]
+
+
+.right-column[
+
+&lt;img src="img/imagen4.jpg" width="550px" height="500px" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+
+
+---
+
+
+
+class: inverse
+background-color: #A93226
+
+
+# Punto 5
+
+
+.left-column[
+
+
+![](https://media.giphy.com/media/yCmlEez1c3C5OPQgij/giphy.gif)
+
+]
+
+
+.right-column[
+
+### **a).** Describa la distribución numérica y comente por qué podríamos querer usar valores transformados logarítmicamente al analizar o modelar estos datos.
+
+&lt;br&gt;
+
+
+### **b).** ¿Qué características de la distribución de la población hispana en los condados de EE. UU. Son evidentes en el mapa pero no en el histograma? ¿Qué características son evidentes en el histograma pero no en el mapa?
+
+
+&lt;br&gt;
+
+
+### **c).** ¿Es una visualización más apropiada o útil que la otra? Explica tu razonamiento.
+
+
+]
+
+
+
+---
+
+
+
+
+name: Punto6
+
+# Punto 6
+
+
+.left-column[
+
+Resulta que te han contratado para dirigir un proyecto en el área de Educación, con la finalidad de caracterizar parte de la población. 
+
+&lt;br&gt;
+
+A continuación hay una guía de como trabajar algunas variables en R de la base de datos de Educación de la Encuesta Nacional de Calidad de Vida.
+
+]
+
+
+.right-column[
+
+
+.scroll-box-20[
+``` r
+
+
+library(haven)
+
+
+Educ = read_dta("G:/Mi unidad/Clases/Javeriana/2021-2/Educación.dta")
+
+View(Educ)
+
+
+hist(Educ$P6167)
+
+
+library(dplyr)
+
+# Realicemos conteos de la variable P4693:
+# ¿Qué medio de transporte utiliza para ir a la institución donde estudia?
+
+Educ %&gt;% 
+  count(P4693)
+
+
+# Realicemos conteos de la variable P5673:
+# ¿El establecimiento donde estudia es privado o público?
+
+
+Educ %&gt;% 
+  count(P5673)
+
+
+# Realicemos conteos conjuntos:
+
+Educ %&gt;% 
+  count(P5673,P4693)
+
+
+# Exploremos ahora las frecuencias relativas, tenemos que calcularlas
+# Utilicemos la variable(P8586)
+# ¿Usted actualmente estudia?
+
+Educ %&gt;% 
+  count(P8586) %&gt;% 
+  mutate(Frecuencia = prop.table(n))
+
+
+# Guardemos lo anterior en un objeto para poder graficarlo
+
+A = Educ %&gt;% 
+    count(P8586) %&gt;% 
+    mutate(Frecuencia = prop.table(n))+
+    mutate()
+
+
+
+# Ahora me interes graficar el objeto "A" creado anteriormente
+
+
+library(ggplot2)
+library(labelled)
+
+
+ggplot( data = A, aes(x= to_factor(P8586), y = Frecuencia)) +
+  geom_bar(stat = "identity") +
+  labs(x = "¿Usted actualmente estudia?" )
+  
+
+```
+]
+
+]
+
+
+
+---
+
+
+# Punto 6
+
+
+.left-column[
+
+![](https://media.giphy.com/media/1gdkWME574oWh9ESjc/giphy.gif)
+
+]
+
+
+.right-column[
+
+Descargue la base de datos del siguiente link: [ECV 2018](http://microdatos.dane.gov.co/index.php/catalog/607/get_microdata)
+
+&lt;br&gt;
+
+* Sección de educación
+* Utilice la librería `haven` para cargar la base de datos (tal cual está el código guía)
+* Realice una caracterización que usted considere pertinente para 3 variables que seleccione.
+* Una variable cuantitativa y una variable cualitativas
+* Presente y comente con los compañeros.
+
+
+]
+
+
+
+
+
+
+
+---
+
+
+
+
+
+
+
+
+class: inverse, center, middle
+background-color: #00081d
+
+.pull-left[
+
+.center[
+&lt;br&gt;&lt;br&gt;
+
+# Gracias!!!
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+
+
+### ¿Preguntas?
+]
+
+
+]
+
+
+.pull-right[
+
+&lt;img style="border-radius: 50%;" src="img/avatar.png"
+width="150px"
+/&gt;
+
+### [www.joaquibarandica.com](https://www.joaquibarandica.com)
+<i class="fab fa-twitter" role="presentation" aria-label="twitter icon"></i> jotajb5
+
+<i class="fab fa-github" role="presentation" aria-label="github icon"></i> juniorjb5
+
+<i class="fa fa-envelope" role="presentation" aria-label="envelope icon"></i> orlando.joaqui@javerianacali.edu.co
+
+]
+
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+----
+
+*Las imágenes utilizadas para ambientar la presentación son de [pixabay](https://pixabay.com/).*  
+Sources: [R for the Rest of Us](https://rfortherestofus.com/), Rob Kabacoff
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
