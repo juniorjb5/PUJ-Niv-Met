@@ -162,7 +162,7 @@ name: Punto1
 **Uso de antibióticos en niños.** El gráfico de barras y el gráfico circular a continuación muestran la distribución de las condiciones médicas preexistentes de los niños que participaron en un estudio sobre la duración óptima del uso de antibióticos en el tratamiento de la traqueítis, que es una infección de las vías respiratorias superiores.
 
 
-<img src="img/imagen1.png" width="90%"/>
+<img src="img/Imagen1.png" width="90%"/>
 
 
 ---
@@ -212,7 +212,7 @@ name: Punto2
 **Todas las vidas son importantes.** Una encuesta de Washington Post-Schar School realizada en los Estados Unidos en junio de 2020, entre una muestra nacional aleatoria de 1.006 adultos, preguntó a los encuestados si apoyaban u oponían las protestas tras el asesinato de George Floyd que han tenido lugar en ciudades de los EE. UU. La encuesta también recopiló información sobre la edad de los encuestados. ( Washington Post 2020 ) Los resultados se resumen en el gráfico de barras apiladas a continuación.
 
 
-<img src="img/imagen2.png" width="70%"/>
+<img src="img/Imagen2.png" width="70%"/>
 
 
 ---
@@ -257,7 +257,7 @@ name: Punto3
 **Visualización de datos de trasplante de corazón.** El Estudio de trasplante de corazón de la Universidad de Stanford se realizó para determinar si un programa experimental de trasplante de corazón aumentaba la vida útil. Cada paciente que ingresó al programa fue designado oficialmente candidato a trasplante de corazón, lo que significa que estaba gravemente enfermo y podría beneficiarse de un nuevo corazón. Los pacientes fueron asignados aleatoriamente a grupos de tratamiento y de control. Los pacientes del grupo de tratamiento recibieron un trasplante y los del grupo de control no. La siguiente visualización muestra dos versiones diferentes de los datos.
 
 
-<img src="img/imagen3.png" width="90%"/>
+<img src="img/Imagen3.png" width="90%"/>
 
 ---
 
@@ -365,7 +365,7 @@ El censo de EE. UU. Recopila datos sobre la raza y el origen étnico de los esta
 
 .right-column[
 
-<img src="img/imagen4.png" width="60%"/>
+<img src="img/Imagen4.png" width="60%"/>
 
 ]
 
