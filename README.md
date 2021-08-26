@@ -16,6 +16,11 @@ Este es el repositorio del curso Nivelatorio en matemáticas y estadística de l
 
 ## ➡️[Actividades](https://juniorjb5.github.io/PUJ-Niv-Met/Class_3/Class_3.html#1)
 
-## ➡️[Carpeta de Datos](https://github.com/juniorjb5/PUJ-Niv-Met/tree/main/Datos)
+## ➡️[Clase Distr. Probabilidad](https://juniorjb5.github.io/PUJ-Niv-Met/Class_4/Class_4.html#1)
+
+## ➡️[Clase Pruebas de Hipótesis](https://juniorjb5.github.io/PUJ-Niv-Met/Class_5/Class_5.html#1)
+
+
+### ➡️[Carpeta de Datos](https://github.com/juniorjb5/PUJ-Niv-Met/tree/main/Datos)
 
 
