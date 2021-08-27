@@ -1,0 +1,601 @@
+---
+title: "Códigos Clase - Maestría en Política Social"
+author: "Orlando Joaqui Barandica <br> www.joaquibarandica.com"
+date: "Agosto - 2021"
+output: 
+    html_document:
+      toc: true
+      toc_depth: 2
+      toc_float: true
+theme: paper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+A continuación se presentan los códigos utilizados en cada clase:
+
+# Script 1 Funciones Base
+
+```{r echo=TRUE, eval=FALSE}
+
+
+
+# Asignación de variables cuantitativos
+
+A = 5
+
+
+
+# Asignación de variables cualitativas
+
+B = "Mi casa es verde"
+B
+
+
+# Valores perdidos
+
+C = NA
+C
+
+
+# Creación de vectores
+
+D = c(1,2,3,4,5)
+D
+
+E = c("Bajo","Medio", "Alto")
+E
+
+# Acceder a la posición del vector
+
+E[2]
+
+D[c(1,4)]
+
+F = c("América","Cali", "Nacional", "Millonarios","Medellín")
+
+F[4]
+
+F[c(1,4)]
+
+G = c(1,3)
+G
+
+F[G]
+
+F
+
+
+# Operaciones matemáticas
+
+# * Multiplicación
+# + suma
+# - resta
+# / dividir
+# ^ potencia
+
+
+H = 5*3
+H
+
+10 / (2 * 5)
+
+
+# Especificar matrices
+
+datos=1:12
+datos
+
+
+
+I=matrix(datos,2,6,byrow = TRUE)
+I
+
+J = matrix(datos,3,4,byrow = TRUE)
+J
+
+
+K=5*J
+
+J+K
+
+J*K
+
+
+# Especificar data frame (Base de datos)
+
+
+nombre = c("Carlos", "Juan", "Mario", "Eduardo", "Antonio")
+edad = c(23,34,19,27,30)
+nota = c(4.3,2.9,3.4,3.9,5)
+
+
+base = data.frame(nombre,edad,nota)
+base
+
+View(base)
+
+
+
+# Especificar listas
+
+
+L = list(A = 3, vector = nombre, la_matrix = J)
+L
+
+
+L$la_matrix
+
+
+
+```
+
+
+# Script 2 Descriptivas
+
+```{r echo=TRUE, eval=FALSE}
+
+y = c(1,2,3,4,5,5)
+
+#Promedio
+mean(y)
+
+#Mediana
+median(y)
+
+#Moda
+# Para calcular la moda es necesario instalar una librería
+# esta librería se llama: modeest
+# Instalación: - Ir a la opción Packages
+#              - Install
+#              - Buscar modeest
+
+
+# Ahora, para calcular la moda utilizo la librería y la función
+
+library(modeest)
+
+mlv(y, method = "mfv")
+
+#####################################################
+
+# Ahora miremos como se calculan estas medidas con 
+# datos faltantes
+
+x = c(20,NA,10,15,NA,25,22,NA)
+
+x
+
+#Media o promedio
+mean(x)
+# esto lo que indica es que omita los NA
+mean(x,na.rm=TRUE)  
+
+#Mediana
+median(x,na.rm=T)
+
+#Moda
+mlv(x, method = "mfv",na.rm=T)
+
+
+
+####################################################
+
+# Indicadores de dispersión
+
+Grupo1 = c(60, 100, 140, 180)
+Grupo2 = c(100, 100, 140, 140)
+Grupo3 = c(120, 120, 120, 120)
+
+#Medias
+mean(Grupo1)
+mean(Grupo2)
+mean(Grupo3)
+
+
+# Varianza
+# Una medida de dispersión o variabilidad de los datos
+# Entre más grande más dispersos
+var(Grupo1)
+var(Grupo2)
+var(Grupo3)
+
+
+# Desviación Estándar
+# Indica en promedio como se alejan los datos de la media
+# general
+
+sd(Grupo1)
+sd(Grupo2)
+sd(Grupo3)
+
+# Mediana
+
+median(Grupo1)
+median(Grupo2)
+median(Grupo3)
+
+
+########################################################
+
+# Coef. de variación
+
+# Es una medida que me permite comparar el grado de homogeneidad
+# de los datos.
+
+#Creo la fución
+cv<-function(Y){
+  
+  (sd(Y)/mean(Y))*100
+
+  }
+
+# Me permite guardar 20 valores aleatorios
+x = runif(20)
+
+
+# Aplicar la función creada
+cv(x)
+
+
+# retornando al ejemplo de los grupos
+
+cv(Grupo1)
+cv(Grupo2)
+cv(Grupo3)
+
+
+################################################
+
+#Cálculo de cuantiles
+
+#Genero 10 millones de datos aleatorio de la distribución
+#normal
+x = rnorm(10000000)
+x
+
+quantile(x,0.95)
+
+median(x)
+
+quantile(x,0.50)
+
+
+#################################################
+# Tabla de frecuencia
+
+
+
+# 1). Hay que instalar la librería agricolae
+# 2). Cargar la librería
+# 3). Se utiliza la función table.freq sobre el histogra
+# de los datos
+
+
+library(agricolae)
+
+# Genero un vector de ingresos
+Ingreso <- c(2, 1.5, 3, 2.2, 1, 1.2, 3, 4, 5, 1, 2)
+
+# La función hist me permite mostrar un gráfico de 
+# histograma
+
+hist(Ingreso)
+
+
+tbFreq <- table.freq(hist(Ingreso, plot=FALSE))
+tbFreq
+
+
+####################################################
+
+
+iris
+
+
+# Para acceder a una variable que puedo utilizar?
+
+# El simbolo $ me permite acceder a una variable
+
+# Opc 1
+iris$Sepal.Length
+
+#Calcular el promedio
+mean(iris$Sepal.Length)
+
+
+# Opc 2
+x = iris$Sepal.Length
+
+#########
+
+#Calcular el promedio
+mean(x)
+
+# En promedio todas las plantas de la muestra 
+# tienen una longitud de tallo de 5.84 cm
+
+##########
+
+median(x)
+
+# El 50% de las plantas analizadas tienen una longitud 
+# de tallo igual o menor a 5.8 cm
+
+
+##########
+
+sd(x)
+
+# En promedio las plantas se alejan de la media (5.84cm)
+# en 0.82 cm.
+
+
+##########
+
+library(modeest)
+mlv(x, method = "mfv")
+
+# La longitud del tallo que más se repite es de 5cm
+
+# La función table me permite observar un conteo
+# por cada categoría
+table(x)
+
+
+##########
+
+
+hist(x)
+
+
+###########
+
+Tabla<-table.freq(hist(x, plot=FALSE))
+Tabla
+
+
+```
+
+
+
+# Script 3 Datos Covid
+
+
+
+```{r echo=TRUE, eval=FALSE}
+
+
+library(readxl)
+
+Covid = read_xlsx("C:/Users/Junior J/Downloads/CovidMuestra.xlsx")
+
+Covid
+
+
+
+x = Covid$Edad
+
+# Promedio
+mean(x)
+
+# Mediana
+median(x)
+
+
+
+library(ggplot2)
+
+ggplot(Covid, aes(x=Edad))+
+geom_histogram()
+
+
+```
+
+
+
+# Script 4 (Punto 4 de la actividad)
+
+
+```{r echo=TRUE, eval=FALSE}
+
+# Cargo la librería
+
+library(openintro)
+
+
+# Cargo los datos
+data(cia_factbook)
+
+
+library(dplyr)
+cia_factbook %>% 
+  ggplot(aes(x=infant_mortality_rate))+
+  geom_histogram()
+
+
+# Mediana
+
+tasa<-cia_factbook$infant_mortality_rate
+
+median(tasa, na.rm = TRUE)
+# el 50% de los 224 países tiene una tasa de mortalidad infantil igual o menor
+# a 13.9%
+
+
+
+# Cuartil 1. ----> 25%
+
+quantile(tasa,0.25,na.rm = TRUE)
+# el 25% de los 224 países tiene una tasa de mortalidad infantil igual o menor
+# a 6.2%
+
+
+
+# Cuartil 3. ----> 75%
+
+quantile(tasa,0.75,na.rm = TRUE)
+# el 75% de los 224 países tiene una tasa de mortalidad infantil igual o menor
+# a 38.6%
+
+
+# Promedio
+
+mean(tasa, na.rm = TRUE)
+# El promedio de la tasa de mortalidad infantil para los 224 paises
+# es igual a 24.5%
+
+
+# Propiedades del promedio
+A = mean( 5 * tasa, na.rm = TRUE)
+A
+
+B = 5  *  mean(tasa, na.rm = TRUE)
+B
+
+
+
+
+# Ver base de datos
+
+View(cia_factbook)
+
+
+Nacimiento = cia_factbook$birth_rate
+
+Mortalidad = cia_factbook$death_rate
+
+
+plot(Nacimiento,Mortalidad)
+
+
+```
+
+
+
+# Script 5 Distr. de Probabilidad
+
+
+```{r echo=TRUE, eval=FALSE}
+
+p = 1/5
+n = 12
+k = 4
+
+
+# Recordar que dbinom me permite calcular la probabilidad exacta para un K
+
+dbinom(k, n, p)
+
+
+
+# Recordar que pbinom me permite calcular la probabilidad acumulada para un K
+
+pbinom(4, 12, 0.2)
+
+
+####################################################################
+# PUNTO 1
+
+dbinom(1,50,7/1000)
+
+#La probabilidad de que al examinar una muestra de 50 menores
+#solo exista uno con sintomas de depresión es de 24.8%
+
+
+####################################################################
+# PUNTO 2
+
+
+# a)
+
+dbinom(15, 15, 0.72)
+
+# b) 
+
+# X:{ 0, 1, 2, 3, ..., 15}
+# Éxito: Terapia funcione, es decir que sea exitosa en el paciente
+# P(Éxito): Probabilidad de tener un paciente para el cual la terapia funcione
+#           es de 0.72
+# Fracaso: Terapia NO funcione
+# P(Fracaso): Es el complemento de la de éxito, es decir 0.28
+
+
+dbinom(0, 15, 0.72)
+
+
+dbinom(15, 15, 0.28)
+
+
+# c) 
+
+dbinom(13, 15, 0.72)
+
+
+####################################################################
+# PUNTO 3
+
+
+# n = 15 personas
+# Éxito: Recuperación de paciente
+# P(exito): 0.4 es la probabilidad de que un paciente se recupere
+
+
+# a) Al menos 10 se recuperen
+# Lo anterior significa que mínimo 10 personas se recuperen.
+# X = {10, 11, 12, 13, 14 ó 15}
+
+# ¿Por qué estaría interesado en calcular la probabilidad acumulada para 
+# 9 personas? Porque el ejercicio toca verlo por el COMPLEMENTO de las
+# probabilidades
+
+#opc 1
+pbinom(9,15,0.4,lower.tail = FALSE)
+
+#opc 2
+1 - pbinom(9,15,0.4)
+
+#opc 3
+dbinom(10,15,0.4) + dbinom(11,15,0.4) + dbinom(12,15,0.4) + dbinom(13,15,0.4) +
+  dbinom(14,15,0.4) + dbinom(15,15,0.4)
+
+
+
+
+#b) Entre 3 y 8
+
+pbinom(8, 15, 0.4) - pbinom(2, 15, 0.4)
+
+
+
+#########################################################################
+# DISTR. NORMAL
+
+
+# P(X<40) , X~N(mu = 30, sigma = 4)
+
+pnorm(40, 30, 4)
+
+
+#########################################################################
+# DISTR. NORMAL ESTÁNDAR
+
+# P(Z < 1.5) , Z ~ N(mu = 0, sigma = 1)
+
+# opc 1
+pnorm(1.5, 0, 1)
+
+# opc 2
+pnorm(1.5)
+
+
+
+pnorm(1.96)
+pnorm(1.64)
+pnorm(1.28)
+
+```
+
+
