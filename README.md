@@ -22,6 +22,9 @@ Este es el repositorio del curso Nivelatorio en matemáticas y estadística de l
 
 ## ➡️[Aqui!! Encontrarás los códigos de las clases](https://juniorjb5.github.io/PUJ-Niv-Met/Codigos/CodigosClase)
 
+## ➡️[Grabaciones ZOOM](https://drive.google.com/drive/folders/1CZK3izwATt19qRzEw0lfz-jtJgTubCKY?usp=sharing)
+
+
 ## ➡️[Carpeta de Datos](https://github.com/juniorjb5/PUJ-Niv-Met/tree/main/Datos)
 
 
