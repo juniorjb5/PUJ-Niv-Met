@@ -667,7 +667,122 @@ summary(ls.fit)
 ```
 
 
+# Script 7 Modelo Logit
 
+
+```{r echo=TRUE, eval=FALSE}
+
+
+
+
+library(haven)
+library(dplyr)
+
+
+Educ = read_dta("G:/Mi unidad/Clases/Javeriana/2021-2/Datos/Educación.dta")
+
+# Lugar donde estudia Oficial / No Oficial
+
+Y = Educ$P5673
+
+#Nuestra categoría (y=0) es Institución Oficial
+#Nuestra categoría (y=1) es Institución No oficial
+
+
+# ¿Cuántos minutos gasta para ir a la institución a la que asiste?
+
+Minutos = Educ$P6167
+hist(Minutos)
+
+# Ubicación de la institución
+# 1 = Centro Urbano
+# 2 = Corregimiento
+# 3 = Vereda o campo
+
+Ubicacion = Educ$P6223
+
+# Con esta tabla miro las frec. absolutas
+table(Ubicacion)
+
+# Con esta tabla miro las frec. relativas
+prop.table( table(Ubicacion))
+  
+
+
+# Modelo Logit
+
+logit1 = glm(as.factor(Y) ~ 1, family = "binomial")
+
+summary(logit1)
+
+
+# El signo negativo del intercepto (-1.9351) nos indica que:
+# La probabilidad de (y=1) es menor que la probabilidad de (y=0),
+# Es decir hay menos estudiantes en Instituciones No Oficiales que Oficiales.
+
+# El odds ratio indica que
+exp(logit1$coefficients)
+
+# Por cada Estudiante de institución pública, hay 0.14 estudiantes de instituciones privadas
+
+
+
+# Hagamos nuestro modelo:
+
+#Queremos explicar la probabilidad de que un estudiante esté en una institución privada/pública
+# En función de: los minutos que gasta para ir a la institución y la ubicación de la institución
+
+
+logit2 = glm(as.factor(Y) ~ Minutos + as.factor(Ubicacion), family = "binomial")
+
+summary(logit2)
+
+
+# Es más intuitivo interpretar los odds.ratio
+
+exp(logit2$coefficients)
+
+
+# B1 = 1.014 : Por cada minuto adicional que gasta en ir a la institución 
+#              los odds de estudiar en una institución privada se incrementan en promedio
+#              1.169
+#              No hay que confundir esto último con que la probabilidad de estudiar en 
+#              una institución privada se incremente en 1.014%
+
+# Esto es complejo de entenderlo!!!
+
+
+# Es mejor intepretar los efectos marginales
+# Debe de instalar la librería mfx
+
+library(mfx)
+
+
+# Crear la base de dados del modelo
+Datos = data.frame(Respuesta = as.factor(Y), Minutos, Localidad = as.factor(Ubicacion))
+
+round(mfx::logitmfx(Respuesta ~ Minutos + Localidad, Datos)$mfxest, 6) 
+
+# Ahora si, podemos hablar en términos de cambios en la probabilidad.
+
+# Minutos: Por cada minuto adicional que se gaste en el desplazamiento la probabilidad 
+# de ir a una institución privada aumenta en 0.1%
+
+# Localidad2: Si la institución se encuentra en un corregimiento la probablidad de
+# ir a una institución privada disminuye en un 9,4% respecto a instituciones que se encuentren
+# en cabeceras municipales
+
+# Localidad3: Si la institución se encuentra en una vereda o campo la probablidad de
+# ir a una institución privada disminuye en un 12,6% respecto a instituciones que se encuentren
+# en cabeceras municipales
+
+
+
+
+
+
+
+```
 
 
 
